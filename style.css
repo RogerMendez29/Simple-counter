@@ -1,0 +1,116 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  min-width: 320px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b95a5;
+}
+
+.display {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #1a1d23;
+  min-width: 160px;
+  text-align: center;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.display.positive { color: #2ecc71; }
+.display.negative { color: #e74c3c; }
+
+.display.bump {
+  transform: scale(1.12);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn--decrement,
+.btn--increment {
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.btn--decrement {
+  background: #e74c3c;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.30);
+}
+
+.btn--decrement:hover {
+  background: #c0392b;
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.40);
+}
+
+.btn--increment {
+  background: #2ecc71;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.30);
+}
+
+.btn--increment:hover {
+  background: #27ae60;
+  box-shadow: 0 6px 16px rgba(46, 204, 113, 0.40);
+}
+
+.btn--reset {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8b95a5;
+  background: #f0f2f5;
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 42px;
+}
+
+.btn--reset:hover {
+  background: #e2e6ea;
+  color: #5a6272;
+}
