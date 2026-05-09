@@ -18,10 +18,10 @@ function render() {
 
   const total = wins + losses;
   if (total === 0) {
-    recordEl.textContent = "0 games played";
+    recordEl.textContent = "0 1v1s attempted";
   } else {
     const pct = Math.round((wins / total) * 100);
-    recordEl.textContent = `${total} game${total !== 1 ? "s" : ""} · ${pct}% win rate`;
+    recordEl.textContent = `${total} 1v1${total !== 1 ? "s" : ""} attempted · ${pct}% win rate`;
   }
 }
 
