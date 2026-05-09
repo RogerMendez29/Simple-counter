@@ -1,12 +1,38 @@
-const display = document.getElementById("display");
-let count = 0;
+const goalsEl = document.getElementById("goals");
+const missesEl = document.getElementById("misses");
+const attemptsEl = document.getElementById("attempts");
 
-function render() {
-  display.textContent = count;
-  display.className =
-    "display" + (count > 0 ? " positive" : count < 0 ? " negative" : "");
+let goals = 0;
+let misses = 0;
+
+function bump(el) {
+  el.classList.remove("bump");
+  void el.offsetWidth;
+  el.classList.add("bump");
+  setTimeout(() => el.classList.remove("bump"), 150);
 }
 
-document.getElementById("increment").addEventListener("click", () => { count++; render(); });
-document.getElementById("decrement").addEventListener("click", () => { count--; render(); });
-document.getElementById("reset").addEventListener("click", () => { count = 0; render(); });
+function render() {
+  goalsEl.textContent = goals;
+  missesEl.textContent = misses;
+  const total = goals + misses;
+  attemptsEl.textContent = total === 1 ? "1 attempt" : `${total} attempts`;
+}
+
+document.getElementById("goal").addEventListener("click", () => {
+  goals++;
+  bump(goalsEl);
+  render();
+});
+
+document.getElementById("miss").addEventListener("click", () => {
+  misses++;
+  bump(missesEl);
+  render();
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  goals = 0;
+  misses = 0;
+  render();
+});

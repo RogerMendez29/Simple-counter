@@ -9,105 +9,141 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f2f5;
+  background: linear-gradient(160deg, #1a6b2f 0%, #0d3d1a 100%);
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
-  padding: 48px 56px;
+  border-radius: 24px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.30);
+  padding: 40px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  min-width: 320px;
+  gap: 28px;
+  min-width: 340px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ball {
+  font-size: 1.8rem;
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a6b2f;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat__label {
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #8b95a5;
 }
 
-.display {
-  font-size: 6rem;
-  font-weight: 700;
+.stat__value {
+  font-size: 5rem;
+  font-weight: 800;
   line-height: 1;
-  color: #1a1d23;
-  min-width: 160px;
-  text-align: center;
-  transition: color 0.2s ease, transform 0.1s ease;
+  transition: transform 0.1s ease;
 }
 
-.display.positive { color: #2ecc71; }
-.display.negative { color: #e74c3c; }
+#goals { color: #1a6b2f; }
+#misses { color: #e74c3c; }
 
-.display.bump {
-  transform: scale(1.12);
+.stat__value.bump {
+  transform: scale(1.18);
+}
+
+.divider {
+  width: 2px;
+  height: 80px;
+  background: #f0f2f5;
+  border-radius: 2px;
+}
+
+.attempts {
+  font-size: 0.85rem;
+  color: #8b95a5;
+  font-weight: 500;
 }
 
 .controls {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
   cursor: pointer;
   border: none;
   border-radius: 12px;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 0;
+  padding: 14px 24px;
   transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.03em;
 }
 
 .btn:active {
   transform: scale(0.94);
 }
 
-.btn--decrement,
-.btn--increment {
-  width: 60px;
-  height: 60px;
-  font-size: 1.8rem;
+.btn--goal {
+  background: #1a6b2f;
   color: #ffffff;
+  box-shadow: 0 4px 14px rgba(26, 107, 47, 0.35);
 }
 
-.btn--decrement {
+.btn--goal:hover {
+  background: #155724;
+  box-shadow: 0 6px 18px rgba(26, 107, 47, 0.45);
+}
+
+.btn--miss {
   background: #e74c3c;
-  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.30);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.30);
 }
 
-.btn--decrement:hover {
+.btn--miss:hover {
   background: #c0392b;
-  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.40);
-}
-
-.btn--increment {
-  background: #2ecc71;
-  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.30);
-}
-
-.btn--increment:hover {
-  background: #27ae60;
-  box-shadow: 0 6px 16px rgba(46, 204, 113, 0.40);
+  box-shadow: 0 6px 18px rgba(231, 76, 60, 0.40);
 }
 
 .btn--reset {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #8b95a5;
   background: #f0f2f5;
-  padding: 10px 20px;
+  color: #8b95a5;
+  font-size: 0.8rem;
+  padding: 10px 18px;
   border-radius: 10px;
-  height: 42px;
 }
 
 .btn--reset:hover {
