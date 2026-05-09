@@ -3,37 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1v1 Soccer Tracker</title>
+    <title>Soccer Tracker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="card">
       <div class="header">
         <span class="ball">⚽</span>
-        <h1 class="title">1v1 Tracker</h1>
+        <h1 class="title">Soccer Tracker</h1>
       </div>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="stat__label">Wins</span>
-          <span class="stat__value" id="wins">0</span>
+      <!-- Category selector -->
+      <div class="category-selector">
+        <button class="btn btn--category active" data-cat="scrimmage">Scrimmage</button>
+        <button class="btn btn--category" data-cat="regular">Regular Season</button>
+        <button class="btn btn--category" data-cat="tournament">Tournament</button>
+      </div>
+
+      <!-- Timers (hidden for scrimmage) -->
+      <div class="timers hidden" id="timers">
+        <hr class="section__divider" />
+        <div class="timer-block">
+          <span class="timer-label">Game Clock</span>
+          <span class="timer-display" id="gameClock">60:00</span>
+          <div class="timer-controls">
+            <button class="btn btn--timer" id="clockToggle">Start</button>
+            <button class="btn btn--timer-reset" id="clockReset">Reset</button>
+          </div>
         </div>
-        <div class="divider"></div>
-        <div class="stat">
-          <span class="stat__label">Losses</span>
-          <span class="stat__value" id="losses">0</span>
+        <div class="timer-block">
+          <span class="timer-label">My Time</span>
+          <span class="timer-display" id="playTime">0:00</span>
+          <button class="btn btn--timer" id="playToggle">I'm On</button>
         </div>
       </div>
 
-      <div class="record">
-        <span id="record">0 games played</span>
-      </div>
+      <hr class="section__divider" />
 
-      <div class="controls">
-        <button class="btn btn--win" id="win">Win</button>
-        <button class="btn btn--loss" id="loss">Loss</button>
-        <button class="btn btn--reset" id="reset">Reset</button>
-      </div>
+      <!-- 1v1 -->
+      <section class="section">
+        <h2 class="section__title">1v1</h2>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__label">Wins</span>
+            <span class="stat__value" id="wins">0</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat__label">Losses</span>
+            <span class="stat__value" id="losses">0</span>
+          </div>
+        </div>
+        <div class="record"><span id="record">0 1v1s attempted</span></div>
+        <div class="controls">
+          <button class="btn btn--win" id="win">Win</button>
+          <button class="btn btn--loss" id="loss">Loss</button>
+        </div>
+      </section>
+
+      <hr class="section__divider" />
+
+      <!-- Scoring -->
+      <section class="section">
+        <h2 class="section__title">Scoring</h2>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__label">Goals</span>
+            <span class="stat__value" id="goals">0</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat__label">Assists</span>
+            <span class="stat__value" id="assists">0</span>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn btn--goal" id="addGoal">+ Goal</button>
+          <button class="btn btn--assist" id="addAssist">+ Assist</button>
+        </div>
+      </section>
+
+      <hr class="section__divider" />
+
+      <!-- Shooting -->
+      <section class="section">
+        <h2 class="section__title">Shooting</h2>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__label">On Target</span>
+            <span class="stat__value" id="onTarget">0</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat__label">Off Target</span>
+            <span class="stat__value" id="offTarget">0</span>
+          </div>
+        </div>
+        <div class="record"><span id="shotAccuracy">0 shots</span></div>
+        <div class="controls">
+          <button class="btn btn--on" id="addOn">+ On Target</button>
+          <button class="btn btn--off" id="addOff">+ Off Target</button>
+        </div>
+      </section>
+
+      <button class="btn btn--reset" id="reset">Reset All</button>
     </div>
 
     <script src="script.js"></script>
