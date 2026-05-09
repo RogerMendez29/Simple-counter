@@ -1,9 +1,9 @@
-const goalsEl = document.getElementById("goals");
-const missesEl = document.getElementById("misses");
-const attemptsEl = document.getElementById("attempts");
+const winsEl = document.getElementById("wins");
+const lossesEl = document.getElementById("losses");
+const recordEl = document.getElementById("record");
 
-let goals = 0;
-let misses = 0;
+let wins = 0;
+let losses = 0;
 
 function bump(el) {
   el.classList.remove("bump");
@@ -13,26 +13,32 @@ function bump(el) {
 }
 
 function render() {
-  goalsEl.textContent = goals;
-  missesEl.textContent = misses;
-  const total = goals + misses;
-  attemptsEl.textContent = total === 1 ? "1 attempt" : `${total} attempts`;
+  winsEl.textContent = wins;
+  lossesEl.textContent = losses;
+
+  const total = wins + losses;
+  if (total === 0) {
+    recordEl.textContent = "0 games played";
+  } else {
+    const pct = Math.round((wins / total) * 100);
+    recordEl.textContent = `${total} game${total !== 1 ? "s" : ""} · ${pct}% win rate`;
+  }
 }
 
-document.getElementById("goal").addEventListener("click", () => {
-  goals++;
-  bump(goalsEl);
+document.getElementById("win").addEventListener("click", () => {
+  wins++;
+  bump(winsEl);
   render();
 });
 
-document.getElementById("miss").addEventListener("click", () => {
-  misses++;
-  bump(missesEl);
+document.getElementById("loss").addEventListener("click", () => {
+  losses++;
+  bump(lossesEl);
   render();
 });
 
 document.getElementById("reset").addEventListener("click", () => {
-  goals = 0;
-  misses = 0;
+  wins = 0;
+  losses = 0;
   render();
 });

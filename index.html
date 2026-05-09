@@ -3,35 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soccer Tracker</title>
+    <title>1v1 Soccer Tracker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="card">
       <div class="header">
         <span class="ball">⚽</span>
-        <h1 class="title">Soccer Tracker</h1>
+        <h1 class="title">1v1 Tracker</h1>
       </div>
 
       <div class="stats">
         <div class="stat">
-          <span class="stat__label">Goals</span>
-          <span class="stat__value" id="goals">0</span>
+          <span class="stat__label">Wins</span>
+          <span class="stat__value" id="wins">0</span>
         </div>
         <div class="divider"></div>
         <div class="stat">
-          <span class="stat__label">Misses</span>
-          <span class="stat__value" id="misses">0</span>
+          <span class="stat__label">Losses</span>
+          <span class="stat__value" id="losses">0</span>
         </div>
       </div>
 
-      <div class="attempts">
-        <span id="attempts">0 attempts</span>
+      <div class="record">
+        <span id="record">0 games played</span>
       </div>
 
       <div class="controls">
-        <button class="btn btn--goal" id="goal">⚽ Goal</button>
-        <button class="btn btn--miss" id="miss">Miss</button>
+        <button class="btn btn--win" id="win">Win</button>
+        <button class="btn btn--loss" id="loss">Loss</button>
         <button class="btn btn--reset" id="reset">Reset</button>
       </div>
     </div>

@@ -73,8 +73,8 @@ body {
   transition: transform 0.1s ease;
 }
 
-#goals { color: #1a6b2f; }
-#misses { color: #e74c3c; }
+#wins { color: #1a6b2f; }
+#losses { color: #e74c3c; }
 
 .stat__value.bump {
   transform: scale(1.18);
@@ -87,7 +87,7 @@ body {
   border-radius: 2px;
 }
 
-.attempts {
+.record {
   font-size: 0.85rem;
   color: #8b95a5;
   font-weight: 500;
@@ -116,24 +116,24 @@ body {
   transform: scale(0.94);
 }
 
-.btn--goal {
+.btn--win {
   background: #1a6b2f;
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(26, 107, 47, 0.35);
 }
 
-.btn--goal:hover {
+.btn--win:hover {
   background: #155724;
   box-shadow: 0 6px 18px rgba(26, 107, 47, 0.45);
 }
 
-.btn--miss {
+.btn--loss {
   background: #e74c3c;
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(231, 76, 60, 0.30);
 }
 
-.btn--miss:hover {
+.btn--loss:hover {
   background: #c0392b;
   box-shadow: 0 6px 18px rgba(231, 76, 60, 0.40);
 }
